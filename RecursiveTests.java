@@ -21,5 +21,13 @@ public class RecursiveTests {
         assertEquals(Main.countHi("bye"), 0);
     }
 
+    @Test
+    public void testCountHi2() {
+        assertEquals(Main.countHi2("ahixhi"), 1);
+        assertEquals(Main.countHi2("ahibhi"), 2);
+        assertEquals(Main.countHi2("hi"), 1);
+        assertEquals(Main.countHi2("hihihi"), 3);
+        assertEquals(Main.countHi2("xhixhi"), 0);
+    }
     
 }

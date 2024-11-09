@@ -30,4 +30,14 @@ public class RecursiveTests {
         assertEquals(Main.countHi2("xhixhi"), 0);
     }
     
+    @Test
+    public void testStrCount() {
+        assertEquals(Main.strCount("catcowcat","cat"), 2);
+        assertEquals(Main.strCount("catcowcat", "cow"), 1);
+        assertEquals(Main.strCount("catcowcat", "dog"), 0);
+        assertEquals(Main.strCount("catcowcatdog", "dog"), 1);
+        assertEquals(Main.strCount("catcowcatdogmeowmeowcat", "cat"), 3);
+        
+    }
+
 }

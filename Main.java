@@ -97,10 +97,11 @@ public class Main {
             return 0;            
         }
 
-        if (str.substring(sub.length()).equals(sub)) {
+        if (str.substring(0,sub.length()).equals(sub)) {
             // If the first letters are the "sub", increase the "sub" occurence count by 1.
             // Return the string, but with the first few letters cut off (per sub length), since substring works by having the # in the parenthesis be the (beginIndex), ex: (beginIndex:2)
-            return 1 + strCount(str.substring(sub.length()), sub);
+            // return 1 + strCount(str.substring(sub.length()), sub);
+            return 1 + strCount(str.substring(1), sub);
         } else {
             // No "sub" was found, so we only have to shorten it by one letter instead of two, because if the first letter was off, it doesnt mean the next 2 letters after won't equal "sub".
             return strCount(str.substring(1), sub);

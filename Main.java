@@ -5,7 +5,7 @@
 public class Main {
     public static void main(String []args)
     {
-        System.out.println("My First Java Program.");
+        System.out.println("Recusion tests and JUnit assignment.");
     }
 
     public static int count8(int number) {
@@ -33,8 +33,11 @@ public class Main {
                 return 1 + count8(number / 10); 
             }
         } else {
-            // If the last digit isn't 8.
+            // If the last digit isn't 8, then continue to the next digit.
             return count8(number / 10);
         }
     }
+
+
+
 }

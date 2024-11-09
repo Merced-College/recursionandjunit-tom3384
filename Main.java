@@ -63,6 +63,7 @@ public class Main {
         }
     }
 
+    // Given a string, compute recursively the number of times lowercase "hi" appears in the string, however do not count "hi" that have an 'x' immediately before them. 
     public static int countHi2(String str) {
         // Base case, where the length is less than 2 (so it cannot be "hi")
         if (str.length() < 2) {
@@ -91,6 +92,7 @@ public class Main {
         }
     }
 
+    // Given a string and a non-empty substring sub, compute recursively the number of times that sub appears in the string, without the sub strings overlapping. 
     public static int strCount(String str, String sub) {
         // Base case, where if the strength length is less than the sub length, return 0. 
         if (str.length() < sub.length()) {
@@ -106,6 +108,24 @@ public class Main {
             // No "sub" was found, so we only have to shorten it by one letter instead of two, because if the first letter was off, it doesnt mean the next 2 letters after won't equal "sub".
             return strCount(str.substring(1), sub);
         }
+    }
+
+
+    // Given a string, return recursively a "cleaned" string where adjacent chars that are the same have been reduced to a single char. So "yyzzza" yields "yza".
+    public static String stringClean(String str) {
+        if (str.length() < 2) {
+            return str;
+        }
+
+        // If the 1st letter is the same as the 2nd letter,
+        if (str.charAt(0) == str.charAt(1)) {
+            // Then return the string with the first letter sliced off/removed
+            return stringClean(str.substring(1));
+        } else {
+            // Returns the first digit which is ok and clear to go, and proceeds to recursively go over the rest of the string.
+            return str.charAt(0) + stringClean(str.substring(1));
+        }
+
     }
 
 

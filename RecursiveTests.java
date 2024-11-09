@@ -36,8 +36,16 @@ public class RecursiveTests {
         assertEquals(Main.strCount("catcowcat", "cow"), 1);
         assertEquals(Main.strCount("catcowcat", "dog"), 0);
         assertEquals(Main.strCount("catcowcatdogdog", "dog"), 2);
-        assertEquals(Main.strCount("catcowcatdogmeowmeowcat", "cat"), 3);
-        
+        assertEquals(Main.strCount("catcowcatdogmeowmeowcat", "cat"), 3);        
+    }
+
+    @Test
+    public void testStringClean() {
+        assertEquals(Main.stringClean("yyzzza"), "yza");
+        assertEquals(Main.stringClean("abbbcdd"), "abcd");
+        assertEquals(Main.stringClean("Hello"), "Helo");
+        assertEquals(Main.stringClean("aalphhabeet"), "alphabet");
+        assertEquals(Main.stringClean("ababababab"), "ababababab");
     }
 
 }

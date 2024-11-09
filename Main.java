@@ -91,4 +91,21 @@ public class Main {
         }
     }
 
+    public static int strCount(String str, String sub) {
+        // Base case, where if the strength length is less than the sub length, return 0. 
+        if (str.length() < sub.length()) {
+            return 0;            
+        }
+
+        if (str.substring(sub.length()).equals(sub)) {
+            // If the first letters are the "sub", increase the "sub" occurence count by 1.
+            // Return the string, but with the first few letters cut off (per sub length), since substring works by having the # in the parenthesis be the (beginIndex), ex: (beginIndex:2)
+            return 1 + strCount(str.substring(sub.length));
+        } else {
+            // No "sub" was found, so we only have to shorten it by one letter instead of two, because if the first letter was off, it doesnt mean the next 2 letters after won't equal "sub".
+            return strCount(str.substring(1));
+        }
+    }
+
+
 }

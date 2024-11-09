@@ -38,6 +38,26 @@ public class Main {
         }
     }
 
+    public static int countHi(String str) {
+        // Base case, where the length is less than 2 (so it cannot be "hi")
+        if (str.length() < 2) {
+            return 0;            
+        }
 
+        // Returns a string that is a substring of this string. The substring begins at the specified beginIndex and extends to the character at index endIndex - 1. 
+        // Thus the length of the substring is endIndex-beginIndex.
+        // Examples:
+        // "hamburger".substring(4, 8) returns "urge"
+        //  "smiles".substring(1, 5) returns "mile"
+        // So substring(0,2) searches for the first 2 letters. 
+        if (str.substring(0,2).equals("hi")) {
+            // If the first 2 letters are "hi", increase the "hi" occurence count by 1.
+            // Return the string, but with the first 2 letters cut off, since substring works by having the # in the parenthesis be the (beginIndex), ex: (beginIndex:2)
+            return 1 + countHi(str.substring(2));
+        } else {
+            // No "hi" was found, so we only have to shorten it by one letter instead of two, because if the first letter was off, it doesnt mean the next 2 letters after won't equal "hi".
+            return countHi(str.substring(1));
+        }
+    }
 
 }
